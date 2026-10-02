@@ -494,17 +494,17 @@ func (c *cmdWrapper) launch(networkPath string, otherNetPath string, args []stri
 			case strings.HasPrefix(line, "info"):
 				break
 			case strings.HasPrefix(line, "GPU: "):
-				if *report_gpu && *backopts == "" {
+				if *report_gpu {
 					gpuType = strings.TrimPrefix(line, "GPU: ")
 				}
 				fmt.Println(line)
 			case strings.HasPrefix(line, "Selected device: "):
-				if *report_gpu && *backopts == "" {
+				if *report_gpu {
 					gpuType = strings.TrimPrefix(line, "Selected device: ")
 				}
 				fmt.Println(line)
 			case strings.HasPrefix(line, "BLAS"):
-				if *report_gpu && *backopts == "" {
+				if *report_gpu {
 					gpuType = "None"
 				}
 				fmt.Println(line)
